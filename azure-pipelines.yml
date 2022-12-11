@@ -1,4 +1,13 @@
 # Starter pipeline
+- task: AzureResourceManagerTemplateDeployment@3
+  inputs:
+    deploymentScope: 'Subscription'
+    azureResourceManagerConnection: 'Sub-Sandbox-MurphyRC(bc1d84a4-791f-40f1-a5a1-2a4b30ca0988)'
+    subscriptionId: 'bc1d84a4-791f-40f1-a5a1-2a4b30ca0988'
+    location: 'Central US'
+    templateLocation: 'Linked artifact'
+    csmFile: 'https://github.com/Azure/azure-quickstart-templates/commit/3c15a86480de31a607f6ea2581eabbd222915a17'
+    deploymentMode: 'Incremental'
 - task: DotNetCoreCLI@2
   inputs:
     command: 'build'
